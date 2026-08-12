@@ -1,0 +1,15 @@
+---
+- name: Generate Day 1 CMDB-lite exceptions
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Generate exception logic
+      ansible.builtin.debug:
+        msg: "Placeholder: flag No Backup, No Monitoring, No Inventory Source, No Owner, and Stale System"
+
+    - name: Create exception report placeholder
+      ansible.builtin.copy:
+        dest: "../output/cmdb_exceptions.csv"
+        content: |
+          Title,Domain,Platform,ExceptionStatus,ExceptionNotes,TechnicalOwner,SupportGroup,LastReconciled
