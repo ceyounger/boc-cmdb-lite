@@ -1,0 +1,19 @@
+---
+- name: Collect AD computer inventory for CMDB-lite
+  hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - ../vars/sources.yml
+
+  tasks:
+    - name: Collect computer objects from each AD domain
+      ansible.builtin.debug:
+        msg: "Placeholder: query {{ item.name }} for server computer objects, OS, last logon, DNS hostname, OU"
+      loop: "{{ domains }}"
+
+    - name: Write AD raw inventory placeholder
+      ansible.builtin.copy:
+        dest: "../output/ad_raw.json"
+        content: |
+          []
