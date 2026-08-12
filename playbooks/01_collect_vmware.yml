@@ -1,0 +1,19 @@
+---
+- name: Collect VMware inventory for CMDB-lite
+  hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - ../vars/sources.yml
+
+  tasks:
+    - name: Collect VM inventory from each vCenter
+      ansible.builtin.debug:
+        msg: "Placeholder: connect to {{ item.name }} and collect VM name, power state, OS, IP, cluster, datastore"
+      loop: "{{ vcenters }}"
+
+    - name: Write VMware raw inventory placeholder
+      ansible.builtin.copy:
+        dest: "../output/vmware_raw.json"
+        content: |
+          []
