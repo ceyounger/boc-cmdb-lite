@@ -1,1 +1,32 @@
+# vars/sources.yml
 
+vcenters:
+  - name: dcwpwvc0111
+  - name: ashpwvc0021
+
+domains:
+  - name: PTBCORP.COM
+    short_name: PTBCORP
+  - name: FCBANCORP.ENT
+    short_name: FCBANCORP
+
+satellite:
+  version: "6.17.9.1"
+
+cohesity_policies:
+  - Standard 14-5-12
+  - Standard 7-3-6
+  - SQL-Standard 14-5-12
+  - SQL-Standard-DR 14-5-12
+  - Weekly 0-2-0
+  - Weekly 0-4-0
+  - Gold
+  - Silver
+  - Bronze
+
+sharepoint:
+  site_name: "DEPT - Systems Engineering"
+  list_name: "Enterprise Server Inventory"
+
+exception_rules:
+  stale_days: 90
