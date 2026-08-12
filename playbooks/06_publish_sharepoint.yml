@@ -1,0 +1,9 @@
+---
+- name: Publish CMDB-lite output to SharePoint
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Publish mode
+      ansible.builtin.debug:
+        msg: "Phase 1: upload CSV to SharePoint library. Phase 2: update SharePoint List via Microsoft Graph."
