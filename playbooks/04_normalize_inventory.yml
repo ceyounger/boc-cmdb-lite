@@ -1,0 +1,15 @@
+---
+- name: Normalize collected inventory
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Normalize names and prepare CMDB-lite inventory
+      ansible.builtin.debug:
+        msg: "Placeholder: normalize hostname, FQDN, domain, platform, source systems, and merge source records"
+
+    - name: Create initial CMDB inventory CSV placeholder
+      ansible.builtin.copy:
+        dest: "../output/cmdb_inventory.csv"
+        content: |
+          Title,FQDN,NormalizedName,Domain,Platform,ServerType,Environment,VMwarePresent,ADPresent,SatellitePresent,LansweeperPresent,SolarWindsPresent,BackupProtected,BackupPolicy,TechnicalOwner,BusinessOwner,ExceptionStatus,LastReconciled
