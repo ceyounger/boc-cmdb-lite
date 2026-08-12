@@ -1,0 +1,18 @@
+---
+- name: Collect Red Hat Satellite inventory for CMDB-lite
+  hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - ../vars/sources.yml
+
+  tasks:
+    - name: Collect Satellite hosts
+      ansible.builtin.debug:
+        msg: "Placeholder: query Satellite {{ satellite.version }} for hostname, FQDN, RHEL version, subscription, last check-in"
+
+    - name: Write Satellite raw inventory placeholder
+      ansible.builtin.copy:
+        dest: "../output/satellite_raw.json"
+        content: |
+          []
